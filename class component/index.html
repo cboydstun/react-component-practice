@@ -7,29 +7,39 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- setting injection sites -->
     <div id="root"></div>
     <div id="second-example"></div>
 
-    
+    <!-- importing libraries -->
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     
+    <!-- sanity check -->
     <script type="text/babel">
         ReactDOM.render(<div><h1>Hi from class component!</h1></div>, document.getElementById('root'));
     </script>
 
+
+    <!-- class based component -->
     <script type="text/babel">
+        // notice all the keywords like class, extends, and component
         class Dinner extends React.Component {
             render() {
+                    // set values for component
                     const { myProp } = this.props;
+                    //return output
                     return (
                         <div>I like to cook {myProp}.</div>
                     );
                 }
             }
 
+        // invoke virtual DOM manager        
         ReactDOM.render(
+            // use a div to avoid React fragments and call component
             <div>
                 <Dinner myProp="steak" />
                 <Dinner myProp="chicken" />
