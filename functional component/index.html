@@ -7,19 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- injection site -->
     <div id="root"></div>
     <div id="second-example"></div>
 
+    <!-- import libraries -->
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
+    <!-- sanity check -->
     <script type="text/babel">
         ReactDOM.render(<div><h1>Hi from functional component!</h1></div>, document.getElementById('root'));
     </script>
 
+    <!-- functional component -->
     <script type="text/babel">
-         //functional component using props.*
+         //functional component using props
             function Dinner(props) {
                 return <h1>{props.name} likes to cook {props.food} for dinner!</h1>;
             }
