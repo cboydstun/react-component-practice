@@ -29,10 +29,10 @@
         class Dinner extends React.Component {
             render() {
                     // set values for component
-                    const { myProp } = this.props;
+                    const { myProp, name }= this.props;
                     //return output
                     return (
-                        <div>I like to cook {myProp}.</div>
+                        <div>I like to cook {myProp} with {name}.</div>
                     );
                 }
             }
@@ -41,8 +41,8 @@
         ReactDOM.render(
             // use a div to avoid React fragments and call component
             <div>
-                <Dinner myProp="steak" />
-                <Dinner myProp="chicken" />
+                <Dinner myProp="steak" name="mia" />
+                <Dinner myProp="chicken" name="mike" />
             </div>, 
             document.getElementById('second-example'));
     </script>
